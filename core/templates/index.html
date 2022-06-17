@@ -1,14 +1,18 @@
 {% load bootstrap4 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Encurtador de Urls</title>
+
     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <div class="container">
         <h1>Encurtador de links</h1>
+        <hr>
         {% bootstrap_messages %}
         <form action="{% url 'core:index' %}" method="post" class="form" autocomplete="off">
            {% csrf_token %}
@@ -16,10 +20,30 @@
            {% buttons %}
                <button type="submit" class="btn btn-primary">Gerar Nova URL</button>
            {% endbuttons %}
-</form>
+        </form>
         <a href="{{ url_encurtada }}" target="_blank">{{url_encurtada}}</a>
 
    </div>
+
+    <footer>
+        <nav class="navbar navbar-expand navbar-dark bg-dark mb-3">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'core:index' %}">Sair</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'core:index' %}">Entrar</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'core:index' %}">Cadastro</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
 
 {% bootstrap_javascript jquery='full' %}
 </body>
