@@ -139,3 +139,11 @@ cython_debug/
 
 # VS Code
 .vscode/
+
+__Pycache__
+
+*.*_
+
+*.pyc
+
+.idea
