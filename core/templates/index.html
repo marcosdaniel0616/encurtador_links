@@ -1,14 +1,26 @@
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Teste</title>
+    <title>Encurtador de Urls</title>
+    {% bootstrap_css %}
 </head>
 <body>
-    <h2>Encurtador de links</h2>
-    <input id="input_task" type="text" placeholder="Informe alguma url">
-    <br>
-    <button type="submit">Gerar URL</button>
+    <div class="container">
+        <h1>Encurtador de links</h1>
+        {% bootstrap_messages %}
+        <form action="{% url 'core:index' %}" method="post" class="form" autocomplete="off">
+           {% csrf_token %}
+           {% bootstrap_form form %}
+           {% buttons %}
+               <button type="submit" class="btn btn-primary">Gerar Nova URL</button>
+           {% endbuttons %}
+</form>
+        <a href="{{ url_encurtada }}" target="_blank">{{url_encurtada}}</a>
 
+   </div>
+
+{% bootstrap_javascript jquery='full' %}
 </body>
 </html>
