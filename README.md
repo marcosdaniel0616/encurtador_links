@@ -1,5 +1,5 @@
 # Encurtador de links
-Projeto Criado para encurtar links.
+Projeto Criado para encurtar links/gerar links alternativos.
 
 ## Bibliotecas utilizadas que valem a menção
 * Django
