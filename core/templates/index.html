@@ -22,27 +22,21 @@
            {% endbuttons %}
         </form>
         <a href="{{ url_encurtada }}" target="_blank">{{url_encurtada}}</a>
-
    </div>
 
     <footer>
-        <nav class="navbar navbar-expand navbar-dark bg-dark mb-3">
-            <div class="container">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'core:index' %}">Sair</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'core:index' %}">Entrar</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'core:index' %}">Cadastro</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <section class="container flex">
+        <div class="item">
+            <a href="https://github.com/marcosdaniel0616" target="_blank">
+                <img src="{% static 'images/github.svg' %}" >
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://www.linkedin.com/in/marcos-daniel-39bb83193/" target="_blank">
+                <img src="{% static 'images/linkedin.svg' %}" >
+            </a>
+        </div>
+        </section>
     </footer>
 
 {% bootstrap_javascript jquery='full' %}
